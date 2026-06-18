@@ -7,107 +7,114 @@ class OpeningAnimation {
     constructor() {
         this.backgroundA = null;
         this.backgroundB = null;
+        this.backgroundC = null;
         this.content     = null;
 
         this.fadeBackgroundA = null;
         this.fadeBackgroundB = null;
+        this.fadeBackgroundC = null;
         this.fadeContent     = null;
 
         this.remove = null;
     }
 
-    prepare(contentHTML = '') {
+    prepare(contentHTML = '', blur = '5rem', colorA = '#fdd000', colorB = '#34221c') {
         const body        = document.body;
         const backgroundA = document.createElement('div');
         const backgroundB = document.createElement('div');
+        const backgroundC = document.createElement('div');
         const content     = document.createElement('p');
 
-        backgroundA.style = `
+        const style = `
             position: fixed;
 
             top: 0; left: 0;
 
             width: 100%; height: 100%;
 
-            background-color: #34221c;
-
-            transition: left 0.45s ease;
-
             z-index: 9999;
+
+            user-select: none;
+        `;
+
+        backgroundA.style = style + `
+            backdrop-filter: blur(${blur});
+
+            transition: opacity 0.5s ease;
         `;
 
         backgroundA.className = 'opening-animation-background';
 
-        backgroundB.style = `
-            position: fixed;
+        backgroundB.style = style + `
+            background-color: ${colorB};
 
-            top: 0; left: 0;
-
-            width: 100%; height: 100%;
-
-            background-color: #fdd000;
-
-            transition: left 0.5s ease;
-
-            z-index: 9999;
+            transition: left 0.45s ease;
         `;
 
         backgroundB.className = 'opening-animation-background';
 
-        content.innerHTML = contentHTML;
+        backgroundC.style = style + `
+            background-color: ${colorA};
 
-        content.style = `
-            position: fixed;
+            transition: left 0.5s ease;
+        `;
 
-            top: 0; left: 0;
+        backgroundC.className = 'opening-animation-background';
 
-            width: 100%; height: 100%;
-            
+        content.style = style + `            
             display: flex; justify-content: center; align-items: center;
 
             transition: opacity 0.5s ease;
-
-            z-index: 9999;
         `;
 
+        content.innerHTML = contentHTML;
         content.className = 'opening-animation-content';
 
         body.append(backgroundA);
         body.append(backgroundB);
+        body.append(backgroundC);
         body.append(content);
 
         this.backgroundA = backgroundA;
         this.backgroundB = backgroundB;
+        this.backgroundC = backgroundC;
         this.content     = content;
 
         return this;
     }
 
-    play() {
+    play(time = 2000) {
         if(!this.fadeBackgroundA) {
             this.fadeBackgroundA = setTimeout(() => {
-                this.backgroundA.style.left = '-100%';
-            }, 2100);
+                this.backgroundA.style.opacity = 0;
+            }, time + 500);
         }
 
         if(!this.fadeBackgroundB) {
             this.fadeBackgroundB = setTimeout(() => {
                 this.backgroundB.style.left = '-100%';
-            }, 2000);
+            }, time + 100);
+        }
+
+        if(!this.fadeBackgroundC) {
+            this.fadeBackgroundC = setTimeout(() => {
+                this.backgroundC.style.left = '-100%';
+            }, time);
         }
 
         if(!this.fadeContent) {
             this.fadeContent = setTimeout(() => {
                 this.content.style.opacity = 0;
-            }, 2500);
+            }, time + 500);
         }
 
         if(!this.remove) {
             this.remove = setTimeout(() => {
                 this.backgroundA.remove();
                 this.backgroundB.remove();
+                this.backgroundC.remove();
                 this.content    .remove();
-            }, 3000);
+            }, time + 1000);
         }
 
         return this;
