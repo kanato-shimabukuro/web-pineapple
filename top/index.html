@@ -1,0 +1,78 @@
+<!--
+    トップページ
+    作成: kanato-shimabukuro
+-->
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdi-icons@1.0.1/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/top.css">
+    </head>
+    <body>
+        <header>
+            <a href="../top/"><h1>PineApple</h1></a>
+            <div>
+                <form action="">
+                    <input type="text" placeholder="検索...">
+                    <span class="mdi mdi-magnify" onclick="this.closest('form').submit();" style="cursor: pointer;"></span>
+                </form>
+                <a href="">
+                    <span class="mdi mdi-account-outline"></span>ログイン
+                </a>
+                <a href="">
+                    <span class="mdi mdi-cart-outline"></span>カート
+                </a>
+            </div>
+        </header>
+        <nav></nav>
+        <main>
+            <aside></aside>
+            <article>
+                <section class="news">
+                    <span class="mdi mdi-chevron-left"></span>
+                    <a href="">
+                        <div>
+                            <div style="min-width: 5rem; min-height: 5rem; background-color: #ffffff80; border-radius: 0.25rem;"></div><!-- 画像の代わり -->
+                            <span>
+                                <h1>ニュース１</h1>
+                                <h2>商品新着情報</h2>
+                                <p>AAAから新作アルバムがリリースされました！</p>
+                            </span>
+                        </div>
+                    </a>
+                    <span class="mdi mdi-chevron-right"></span>
+                </section>
+                <section class="best_seller">
+                    <h1>ベストセラー</h1>
+                    <div>
+                        <div>
+                            <div style="min-width: 5rem; min-height: 5rem; background-color: #ffffff80; border-radius: 0.25rem;"></div><!-- 画像の代わり -->
+                            <span>
+                                <a href="">
+                                    <h1>商品１</h1>
+                                </a>
+                                <h2>アーティスト名</h2>
+                                <p>￥1,500</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div style="min-width: 5rem; min-height: 5rem; background-color: #ffffff80; border-radius: 0.25rem;"></div><!-- 画像の代わり -->
+                            <span>
+                                <a href="">
+                                    <h1>商品２</h1>
+                                </a>
+                                <h2>アーティスト名</h2>
+                                <p>￥900</p>
+                            </span>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+        <footer>
+            <p>Copyright © 2026 PineApple co., ltd. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

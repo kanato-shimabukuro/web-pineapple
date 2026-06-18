@@ -1,0 +1,118 @@
+<!--
+    アイテム一覧ページ
+    作成: kanato-shimabukuro
+-->
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdi-icons@1.0.1/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/item_list.css">
+    </head>
+    <body>
+        <header>
+            <a href="../top/"><h1>PineApple</h1></a>
+            <div>
+                <form action="">
+                    <input type="text" placeholder="検索...">
+                    <span class="mdi mdi-magnify" onclick="this.closest('form').submit();" style="cursor: pointer;"></span>
+                </form>
+                <a href="">
+                    <span class="mdi mdi-account-outline"></span>ログイン
+                </a>
+                <a href="">
+                    <span class="mdi mdi-cart-outline"></span>カート
+                </a>
+            </div>
+        </header>
+        <nav></nav>
+        <main>
+            <aside>
+                <h1>詳細検索</h1>
+                <form>
+                    <div class="genre">
+                        <h1>ジャンル</h1>
+                        <label>J-POP<input type="checkbox" value=""></label>
+                        <label>K-POP<input type="checkbox" value=""></label>
+                        <label>邦楽<input type="checkbox" value=""></label>
+                        <label>洋楽<input type="checkbox" value=""></label>
+                        <label>ポップス<input type="checkbox" value=""></label>
+                        <label>ロック<input type="checkbox" value=""></label>
+                        <label>ヒップホップ<input type="checkbox" value=""></label>
+                        <label>R&amp;B<input type="checkbox" value=""></label>
+                        <label>その他<input type="checkbox" value=""></label>
+                    </div>
+                    <div class="artist">
+                        <h1>アーティスト名</h1>
+                        <input type="text">
+                    </div>
+                    <div class="price">
+                        <h1>価格</h1>
+                        <input type="number" name="min_price" placeholder="1000"> 円～
+                        <input type="number" name="max_price" placeholder="5000"> 円
+                    </div>
+                    <div class="date_of_release">
+                        <h1>発売日</h1>
+                        <input type="date">
+                        <select name="">
+                            <option value="">当日</option>
+                            <option value="">以前</option>
+                        </select>
+                    </div>
+                    <button type="submit">検索</button>
+                </form>
+            </aside>
+            <article>
+                <section class="">
+                    <h1>商品一覧</h1>
+                    <table>
+                        <tr>
+                            <th>商品画像</th>
+                            <th>商品名</th>
+                            <th>価格</th>
+                            <th>カテゴリ</th>
+                            <th>ジャンル</th>
+                            <th>試聴</th>
+                        </tr>
+                        <tr>
+                            <td><div style="width: 5rem; height: 5rem; background-color: #00000080;"></div><!-- 画像の代わり --></td>
+                            <td><a href="">クラシック名曲100選</a></td>
+                            <td>&yen;1200</td>
+                            <td>CD</td>
+                            <td>その他</td>
+                            <td><span class="mdi mdi-play-circle"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div style="width: 5rem; height: 5rem; background-color: #00000080;"></div><!-- 画像の代わり --></td>
+                            <td><a href="">Artist太郎 CDシングル</a></td>
+                            <td>&yen;2300</td>
+                            <td>CD</td>
+                            <td>J-POP</td>
+                            <td><span class="mdi mdi-play-circle"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div style="width: 5rem; height: 5rem; background-color: #00000080;"></div><!-- 画像の代わり --></td>
+                            <td><a href="">LIVE Tour 2026</a></td>
+                            <td>&yen;3000</td>
+                            <td>DVD/ブルーレイ</td>
+                            <td>K-POP</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><div style="width: 5rem; height: 5rem; background-color: #00000080;"></div><!-- 画像の代わり --></td>
+                            <td><a href="">うちわ(青)</a></td>
+                            <td>&yen;900</td>
+                            <td>グッズ</td>
+                            <td>J-POP</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </section>
+            </article>
+        </main>
+        <footer>
+            <p>Copyright © 2026 PineApple co., ltd. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

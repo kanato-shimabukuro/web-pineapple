@@ -1,0 +1,130 @@
+/*
+    全ページ共通 スタイル定義
+    作成: kanato-shimabukuro
+*/
+
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+}
+
+html {
+    min-height: 100%;
+
+    position: relative;
+}
+
+body {
+    margin: 0 0 5rem 0;
+}
+
+a {
+    color: inherit;
+}
+
+header {
+    padding: 0.5rem 1rem;
+
+    display: flex; justify-content: space-between; align-items: center;
+
+    background-color: #fdd000; color: #333;
+
+    h1 {
+        font-size: 1rem;
+        font-style: italic;
+        font-family: "Bitcount Single", system-ui;
+        font-weight: 500 !important;
+    }
+
+    div {
+        display: flex; align-items: center;
+
+        gap: 1rem;
+
+        a {
+            display: flex; flex-direction: column; align-items: center;
+
+            font-size: 0.5rem;
+
+            .mdi {
+                font-size: 0.75rem;
+            }
+        }
+
+        form {
+            padding: 0 0.25rem 0 0;
+
+            display: flex; align-items: center;
+
+            background-color: #fff;
+
+            border-radius: 0.5rem;
+
+            input {
+                padding: 0.25rem 0.5rem;
+
+                font-size: 0.5rem;
+
+                border-radius: inherit;
+                border: none;
+            }
+
+            .mdi {
+                font-size: 0.75rem;
+            }
+        }
+    }
+
+    @media (width > 900px) {
+        padding-left: 10rem;
+        padding-right: 10rem;
+
+        h1 {
+            font-size: 1.25rem;
+        }
+
+        div {
+            a {
+                .mdi {
+                    font-size: 1rem;
+                }
+            }
+
+            form {
+                input {
+                    font-size: 0.75rem;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 0.5rem 0;
+
+    background-color: #34221c; color: #fff;
+
+    p {
+        font-size: 0.5rem;
+
+        text-align: center;
+
+        opacity: 0.5;
+    }
+
+    @media (width > 900px) {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}
