@@ -61,7 +61,7 @@ class OpeningAnimation {
 
         backgroundC.className = 'opening-animation-background';
 
-        content.style = style + `            
+        content.style = style + `
             display: flex; justify-content: center; align-items: center;
 
             transition: opacity 0.5s ease;
